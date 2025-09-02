@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Pastelería Mil Sabores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .products-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/banner-productos.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .categories-nav {
+            background-color: #FFC0CB;
+            padding: 15px 0;
+        }
+        
+        .categories-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .category-btn {
+            background-color: white;
+            border: 2px solid #884513;
+            color: #5D4037;
+            padding: 8px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: #884513;
+            color: white;
+        }
+        
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #FFF5E1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 180px;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-family: 'Pacifico', cursive;
+            color: #884513;
+            margin: 0 0 10px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #5D4037;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+        .add-to-cart {
+            background-color: #FFC0CB;
+            color: #5D4037;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #ffadbb;
+        }
+        
+        .filter-section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .filter-select {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="products-header">
+        <h1>Nuestros Productos</h1>
+        <p>Descubre nuestra amplia variedad de deliciosos postres y tortas</p>
+    </div>
+
+    <div class="categories-nav">
+        <div class="categories-container">
+            <button class="category-btn active" data-category="all">Todos</button>
+            <button class="category-btn" data-category="tortas-cuadradas">Tortas Cuadradas</button>
+            <button class="category-btn" data-category="tortas-circulares">Tortas Circulares</button>
+            <button class="category-btn" data-category="postres-individuales">Postres Individuales</button>
+            <button class="category-btn" data-category="sin-azucar">Sin Azúcar</button>
+            <button class="category-btn" data-category="tradicional">Tradicional</button>
+            <button class="category-btn" data-category="sin-gluten">Sin Gluten</button>
+            <button class="category-btn" data-category="vegana">Vegana</button>
+            <button class="category-btn" data-category="especiales">Tortas Especiales</button>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <select class="filter-select" id="sort-select">
+            <option value="default">Ordenar por</option>
+            <option value="price-asc">Precio: Menor a Mayor</option>
+            <option value="price-desc">Precio: Mayor a Menor</option>
+            <option value="name">Nombre A-Z</option>
+        </select>
+        
+        <select class="filter-select" id="size-filter">
+            <option value="all">Todos los tamaños</option>
+            <option value="pequeno">Pequeño</option>
+            <option value="mediano">Mediano</option>
+            <option value="grande">Grande</option>
+        </select>
+    </div>
+
+    <div class="products-container" id="products-grid">
+        
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/productos.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Pastelería Mil Sabores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .about-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/banner-nosotros.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .about-section {
+            margin-bottom: 60px;
+        }
+        
+        .about-title {
+            font-family: 'Pacifico', cursive;
+            color: #884513;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        .history-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .history-text {
+            line-height: 1.8;
+            color: #5D4037;
+        }
+        
+        .history-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .history-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .mission-card, .vision-card {
+            background-color: #FFF5E1;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .mission-card h3, .vision-card h3 {
+            font-family: 'Pacifico', cursive;
+            color: #884513;
+            margin-top: 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .value-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 2.5em;
+            color: #FFC0CB;
+            margin-bottom: 15px;
+        }
+        
+        .value-card h3 {
+            color: #884513;
+            margin: 0 0 15px;
+        }
+        
+        .team-section {
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-image {
+            height: 250px;
+            background-color: #FFF5E1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .member-image img {
+            max-width: 100%;
+            max-height: 230px;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-name {
+            font-family: 'Pacifico', cursive;
+            color: #884513;
+            margin: 0 0 5px;
+        }
+        
+        .member-role {
+            color: #5D4037;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+        
+        .achievements {
+            background-color: #FFF5E1;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+        
+        .achievement-item {
+            text-align: center;
+        }
+        
+        .achievement-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #884513;
+            margin: 0 0 10px;
+        }
+        
+        .achievement-text {
+            color: #5D4037;
+            margin: 0;
+        }
+        
+        .community-impact {
+            text-align: center;
+        }
+        
+        .impact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .impact-text {
+            line-height: 1.8;
+            color: #5D4037;
+            text-align: left;
+        }
+        
+        .impact-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .impact-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .history-content,
+            .mission-vision,
+            .impact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .history-image,
+            .impact-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="about-header">
+        <h1>Nuestra Historia</h1>
+        <p>50 años endulzando momentos especiales</p>
+    </div>
+
+    <div class="about-content">
+        <section class="about-section">
+            <h2 class="about-title">Nuestra Trayectoria</h2>
+            <div class="history-content">
+                <div class="history-text">
+                    <p>Pastelería Mil Sabores nació en 1973 cuando la familia González decidió compartir sus recetas tradicionales con la comunidad. Lo que comenzó como un pequeño local familiar en el barrio Yungay de Santiago, pronto se convirtió en un referente de la repostería chilena.</p>
+                    <p>Nuestro momento más memorable fue en 1995, cuando participamos en la creación de la torta más grande del mundo, estableciendo un Récord Guinness. Esta hazaña nos dio reconocimiento internacional y consolidó nuestro compromiso con la calidad y la innovación.</p>
+                    <p>Hoy, después de 50 años, mantenemos vivo el legado de nuestras recetas originales mientras incorporamos nuevas técnicas y sabores, siempre con el mismo amor y dedicación que nos caracteriza.</p>
+                </div>
+                <div class="history-image">
+                    <img src="../img/nosotros/historia.jpg" alt="Historia de Pastelería Mil Sabores">
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2 class="about-title">Misión y Visión</h2>
+            <div class="mission-vision">
+                <div class="mission-card">
+                    <h3>Misión</h3>
+                    <p>Ofrecer una experiencia dulce y memorable a nuestros clientes, proporcionando tortas y productos de repostería de alta calidad para todas las ocasiones, mientras celebramos nuestras raíces históricas y fomentamos la creatividad en la repostería.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Visión</h3>
+                    <p>Convertirnos en la tienda online líder de productos de repostería en Chile, conocida por nuestra innovación, calidad y el impacto positivo en la comunidad, especialmente en la formación de nuevos talentos en gastronomía.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2 class="about-title">Nuestros Valores</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <h3>Pasión</h3>
+                    <p>Amor por la repostería que se refleja en cada uno de nuestros productos.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Tradición</h3>
+                    <p>Respeto por las recetas ancestrales que han endulzado generaciones.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✨</div>
+                    <h3>Calidad</h3>
+                    <p>Utilizamos solo los mejores ingredientes en cada una de nuestras preparaciones.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Comunidad</h3>
+                    <p>Creemos en crecer junto a nuestra comunidad y apoyar a nuevos talentos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section team-section">
+            <h2 class="about-title">Nuestro Equipo</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="../img/equipo/gerente.jpg" alt="María González">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">María González</h3>
+                        <p class="member-role">Gerente General</p>
+                        <p>Nieto de los fundadores, continúa con el legado familiar desde 2005.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="../img/equipo/pastelero.jpg" alt="Carlos Mendoza">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Carlos Mendoza</h3>
+                        <p class="member-role">Pastelero Master</p>
+                        <p>20 años de experiencia y creador de nuestras recetas más premiadas.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="../img/equipo/creativa.jpg" alt="Ana Fernández">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Ana Fernández</h3>
+                        <p class="member-role">Directora Creativa</p>
+                        <p>Diseña las creaciones más innovadoras y hermosas de nuestra pastelería.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="../img/equipo/atencion.jpg" alt="Javier López">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Javier López</h3>
+                        <p class="member-role">Jefe de Atención al Cliente</p>
+                        <p>Garantiza que cada cliente tenga una experiencia memorable con nosotros.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="achievements">
+        <h2 class="about-title">Logros Destacados</h2>
+        <div class="achievements-grid">
+            <div class="achievement-item">
+                <div class="achievement-number">50</div>
+                <p class="achievement-text">Años endulzando momentos</p>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-number">1</div>
+                <p class="achievement-text">Récord Guinness obtenido</p>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-number">150+</div>
+                <p class="achievement-text">Productos diferentes</p>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-number">10.000+</div>
+                <p class="achievement-text">Clientes satisfechos</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-content">
+        <section class="about-section community-impact">
+            <h2 class="about-title">Impacto Comunitario</h2>
+            <div class="impact-content">
+                <div class="impact-text">
+                    <p>En Pastelería Mil Sabores creemos en retribuir a la comunidad que nos ha apoyado durante todos estos años. Por eso, tenemos un programa especial de colaboración con estudiantes de gastronomía de Duoc UC.</p>
+                    <p>Ofrecemos pasantías y prácticas profesionales donde los estudiantes pueden aprender el arte de la repostería tradicional y moderna. Muchos de nuestros actuales empleados comenzaron como practicantes en nuestra pastelería.</p>
+                    <p>Además, destinamos un porcentaje de nuestras ventas a becas para estudiantes de repostería que demuestren talento y compromiso, pero que tengan dificultades económicas para continuar sus estudios.</p>
+                    <p>¡Para nosotros, ser parte de la formación de la nueva generación de pasteleros es un honor y un privilegio!</p>
+                </div>
+                <div class="impact-image">
+                    <img src="../img/nosotros/impacto-comunitario.jpg" alt="Impacto comunitario Pastelería Mil Sabores">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Cargar header y footer
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+            
+            fetch('../footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
